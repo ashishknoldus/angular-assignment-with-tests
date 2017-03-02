@@ -1,0 +1,74 @@
+div.container.tasks {
+  padding-top : 20px;
+}
+
+div.task-date {
+  color: #336699;
+  font-weight: bold;
+}
+
+div.task-title {
+  color: #3e3e3e;
+  font-weight: bold;
+}
+
+div.task-edit a.btn {
+  height: auto!important;
+  width: auto!important;
+  padding: 0px;
+  margin: 0px;
+}
+
+div.task-priority {
+  font-weight: bold;
+  color: #336699;
+}
+
+li:nth-child(odd) {
+  background-color: rgba(243, 255, 148, 0.5);
+}
+
+li:nth-child(even) {
+  background-color: rgba(196, 255, 151, 0.51);
+}
+
+a:hover {
+  text-decoration: none;
+  color: crimson;
+}
+
+div.display-details,
+div.jumbotron,
+div.show-warning {
+  max-width: 500px;
+  position: fixed;
+  top: 40px;
+  left: 0px;
+  right: 0px;
+  margin: 0 auto;
+  box-shadow: 5px 0px 5px #5f5f5f, -5px 0px 5px #5f5f5f, 0px -5px 5px #5f5f5f, 0px 5px 5px #5f5f5f;
+  background-color: #3e3e3e;
+  color: #fff;
+}
+
+div.jumbotron h2{
+  color: #fff;
+  text-shadow: 2px 2px 1px #2e272a;
+}
+
+button.btn-warning {
+  color : #2b0002;
+  font-weight: bold;
+}
+
+button.hide-details{
+  float: right;
+}
+
+button.btn-success {
+  float: right;
+}
+
+button.btn-danger.delete-task {
+  float: left;
+}

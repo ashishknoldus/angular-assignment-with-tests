@@ -1,0 +1,56 @@
+<div class="container tasks">
+  <div class="row">
+    <div class="col-sm-12">
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let task of tasks">
+          <div class="row">
+            <div class="col-sm-2 task-date">{{task.date}}</div>
+            <div class="col-sm-8 task-title"><a href="#" (click)="displayDetails($event)">{{task.title}}</a></div>
+            <div class="task-descriptor" hidden>{{task.description}}</div>
+
+            <div class="col-sm-1 task-priority">{{task.priority}}</div>
+
+            <div class="col-sm-1 task-edit">
+              <a  class="btn edit" (click)="updateTask($event)" name="{{task._id}}">
+                <span class="glyphicon glyphicon-edit" title="{{task._id}}"></span>
+              </a>
+              <a  class="btn delete" (click)="showDeletionWarning($event)" name="{{task._id}}">
+                <span class="glyphicon glyphicon-remove-circle" title="{{task._id}}"></span>
+              </a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="container display-details" *ngIf="displayDetailsFlag == 1">
+  <div class="jumbotron">
+    <h2>{{displayTaskTitle}}</h2>
+    <p>{{displayTaskDescription}}</p>
+
+    <button type="button" class="btn btn-warning" disabled>
+      {{displayTaskDate}}
+      <span class="badge">{{displayTaskPriority}}</span>
+    </button>
+    <button type="button" class="btn btn-danger hide-details" (click)="hideDetails($event)">
+      Close
+    </button>
+
+  </div>
+
+</div>
+
+<div class="container show-warning" *ngIf="displayWarningFlag == 1">
+  <div class="jumbotron">
+    <h2>{{warningMessage}}</h2>
+
+    <button type="button" class="btn btn-danger hide-details delete-task" (click)="deleteTask($event)">
+      Yes I'am sure
+    </button>
+    <button type="button" class="btn btn-success hide-details" (click)="hideWarningPanel($event)">
+      No
+    </button>
+  </div>
+</div>

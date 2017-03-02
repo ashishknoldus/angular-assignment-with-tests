@@ -1,0 +1,64 @@
+<div class="container">
+  <form>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="btn-group">
+          <div class="btn-group">
+            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+              {{dayButtonLabel}} <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu">
+              <li *ngFor="let day of dayArray" (click)="dayClicked($event)"><a href="#">{{day}}</a></li>
+            </ul>
+          </div>
+          <div class="btn-group">
+            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+              {{monthButtonLabel}} <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu">
+              <li *ngFor="let month of monthArray" (click)="monthClicked($event)"><a href="#">{{month}}</a></li>
+            </ul>
+          </div>
+          <div class="btn-group">
+            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+              {{yearButtonLabel}} <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu">
+              <li *ngFor="let year of yearArray" required (click)="yearClicked($event)"><a href="#">{{year}}</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="form-group">
+          <input type="text" class="form-control" id="task-title" name="task-title" placeholder="Title of task"
+                 (keyup)="captureTitle($event.target.value)" value="{{taskTitle}}">
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="form-group">
+          <textarea class="form-control" rows="5" id="task-description" placeholder="Task description..."
+                    (keyup)="captureDescription($event.target.value)">{{taskDescription}}</textarea>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="btn-group">
+          <div class="btn-group">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+              {{priorityButtonLabel}} <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu">
+              <li *ngFor="let priority of priorityArray" (click)="priorityClicked($event)"><a href="#">{{priority}}</a>
+              </li>
+            </ul>
+          </div>
+          <button type="submit" class="btn btn-success submit" (click)="updateTask($event)">Update</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
